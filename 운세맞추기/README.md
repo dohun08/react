@@ -1,13 +1,2 @@
-Commit Rules
-| type | description |
-| --- | --- |
-| ADD ::  | 기능 추가 |
-| FIX :: | 수정 |
-| DOCS :: | 세부 기능 추가 |
-| STYLE :: | 코드 스타일 변경 |
-| REFACTOR :: | 코드 리팩토링 |
-| TEST :: | 코드 테스트 |
-| DELETE :: | 파일 또는 기능 삭제 |
-
-ex : 
-git commit -m "페이지이름 추가한부분 - add"
+## 운세맞추기
+랜덤함수를 이용해서 누를때마다 랜덤하게 문장이나옴
