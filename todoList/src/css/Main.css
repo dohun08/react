@@ -1,0 +1,67 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color: #bde1ff;
+}
+.headerBox{
+    width: 60%;
+    padding: 2%;
+    margin: 0 auto;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+.todoList{
+    width: 60%;
+    padding: 2%;
+    border-radius: 30px;
+    margin: 30px auto;
+    background-color: white;
+}
+.todo{
+    width: 95%;
+    padding: 2%;
+    margin: 0 auto;
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #87cbff;
+    justify-content: space-between;
+    align-items: center;
+}
+.buttonBox{
+    width: 15%;
+    display: flex;
+    justify-content: space-between;
+}
+.buttonBox button{
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+}
+.buttonBox button:first-child{
+    background-color: #57ea58;
+}
+.buttonBox button:last-child{
+    background-color: #f12323;
+}
+.buttonBox button:first-child:hover{
+    background-color: #2ee42f;
+}
+.buttonBox button:last-child:hover{
+    background-color: #ca1d1d;
+}
+.buttonBox button:first-child:active{
+    background-color: #23a624;
+}
+.buttonBox button:last-child:active{
+    background-color: #801313;
+}
