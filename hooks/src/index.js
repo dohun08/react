@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from "./App";
 import UseRef from './useRef'
 import UseContext from "./useContext";
+import UseMemo from './useMemo'
 import {
     BrowserRouter as Router,
     Routes,
@@ -16,6 +17,7 @@ root.render(
             <Route path={'/'} element={<App />}></Route>
             <Route path={'/useRef'} element={<UseRef />}></Route>
             <Route path={'/useContext'} element={<UseContext />}></Route>
+            <Route path={'/useMemo'} element={<UseMemo />}></Route>
         </Routes>
     </Router>
 
