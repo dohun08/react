@@ -22,12 +22,11 @@ function Main(){
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ task: newTodo }), // 새로운 할일을 서버로 전송
+                body: JSON.stringify({ task: newTodo }),
             });
             if (response.ok) {
                 setNewTodo(''); // 입력 필드를 비워줌
-                getTodos(); // 새로운 할일을 추가한 뒤 목록을 다시 불러옴
-                console.log("getTodos")
+                getTodos();
             } else {
                 console.error('서버에서 오류 발생');
             }
@@ -35,7 +34,37 @@ function Main(){
             console.error('데이터 전송 실패:', error);
         }
     };
-    console.log(Todos)
+    const del = async (e)=>{
+        console.log(e)
+        try{
+            await fetch(`http://localhost:8080/delete/${e}`, {
+                method: 'DELETE'
+            })
+            getTodos()
+        }
+        catch (error) {
+            console.error('Error deleting todo:', error);
+        }
+    }
+    const com = async (e)=>{
+        try{
+            await fetch(`http://localhost:8080/completed/${e}` , {
+                method: 'PATCH'
+            })
+            getTodos()
+        }
+        catch (error) {
+            console.error('Error deleting todo:', error);
+        }
+    }
+    function getId(e, type){
+        if (type === "deleted"){
+            del(e)
+        }
+        else{
+            com(e)
+        }
+    }
     return(
         <div className={"container"}>
             <section className={"headerBox"}>
@@ -49,10 +78,10 @@ function Main(){
                 {Todos.length > 0 ? Todos.map((element)=> {
                     return (
                         <div className={"todo"} key={element.id}>
-                            <p>{element.task}</p>
+                            <p className={element.completed === "true"  ? "task" : null}>{element.task}</p>
                             <div className={"buttonBox"}>
-                                <button type={"button"}>완료하기</button>
-                                <button type={"button"}>삭제하기</button>
+                                <button type={"button"} onClick={()=>{getId(element.id, "completed")}}>완료하기</button>
+                                <button type={"button"} onClick={()=>{getId(element.id, "deleted")}}>삭제하기</button>
                             </div>
                         </div>
                     )

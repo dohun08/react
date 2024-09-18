@@ -65,3 +65,7 @@
 .buttonBox button:last-child:active{
     background-color: #801313;
 }
+.task{
+    text-decoration-line: line-through;
+    color: gray;
+}
