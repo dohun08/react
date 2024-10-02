@@ -4,6 +4,7 @@ import App from "./App";
 import UseRef from './useRef'
 import UseContext from "./useContext";
 import UseMemo from './useMemo'
+import UseCallback from "./useCallback";
 import {
     BrowserRouter as Router,
     Routes,
@@ -18,6 +19,7 @@ root.render(
             <Route path={'/useRef'} element={<UseRef />}></Route>
             <Route path={'/useContext'} element={<UseContext />}></Route>
             <Route path={'/useMemo'} element={<UseMemo />}></Route>
+            <Route path={'/useCallback'} element={<UseCallback />}></Route>
         </Routes>
     </Router>
 
