@@ -2,5 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/curd-practice/crud-client" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/jwt연습/클라이언트" vcs="Git" />
   </component>
 </project>
