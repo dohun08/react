@@ -31,7 +31,7 @@ db.connect((err) => {
 });
 
 // 할 일 목록 조회
-app.get("/", (req, res) => {
+app.get("/get", (req, res) => {
     db.query("SELECT * FROM todos", (err, results) => {
         if (err) return res.status(500).json({ error: "데이터 조회 실패" });
         res.json(results);

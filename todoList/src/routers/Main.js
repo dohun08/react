@@ -6,7 +6,7 @@ function Main(){
     const [Todos, setTodos] = useState([])
     const [newTodo, setNewTodo] = useState("")
     const getTodos = async ()=>{
-        const response = await axios.get("http://localhost:8080", {
+        const response = await axios.get("/get", {
             headers:{
                 'ContentType':'application/json'
             },
@@ -24,7 +24,7 @@ function Main(){
     const addTodo = async () => {
         if (newTodo.trim() === "") return;
        try{
-           const response = await axios.post("http://localhost:8080/insert", {
+           const response = await axios.post("/insert", {
                task:newTodo
            })
            if (response.status === 201) {
@@ -40,7 +40,7 @@ function Main(){
     const del = async (e)=>{
         console.log(e)
         try{
-            const response = await axios.delete(`http://localhost:8080/delete/${e}`, );
+            const response = await axios.delete(`/delete/${e}`, );
             if(response.status === 204){
                 console.log("성공적으로 삭제되었습니다.")
                 getTodos();
@@ -52,7 +52,7 @@ function Main(){
     }
     const com = async (e) => {
         try {
-            const response = await axios.patch(`http://localhost:8080/completed/${e}`);
+            const response = await axios.patch(`/completed/${e}`);
             getTodos();
         } catch (error) {
             console.error("Request failed:", error.response || error);
@@ -80,7 +80,7 @@ function Main(){
                     <input type={"button"} onClick={addTodo} value={"추가하기"}/>
             </section>
             <section className={"todoList"}>
-                {Todos.length > 0 ? Todos.map((element)=> {
+                {Todos  ? Todos.map((element)=> {
                     console.log(element.completed)
                     return (
                             <div className={"todo"} key={element.id}>
