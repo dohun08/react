@@ -7,7 +7,7 @@ app.use(cors())
 
 app.post('/api/auth/login', async (req, res) => {
     const { token } = req.body;
-
+    console.log(token);
     try {
         // Google API에 사용자 정보 요청
         const response = await axios.get('https://www.googleapis.com/oauth2/v3/userinfo', {
@@ -29,7 +29,7 @@ app.post('/api/auth/login', async (req, res) => {
     }
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
